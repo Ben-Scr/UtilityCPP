@@ -18,12 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="IOS\File.cpp">
+    <ClCompile Include="File\File.cpp">
       <Filter>Headerdateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IOS\File.hpp">
+    <ClInclude Include="File\File.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Math\Random.hpp">
