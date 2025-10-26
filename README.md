@@ -1,9 +1,15 @@
 # C++ Utility Library
-A small c++ utility library
+A Small `C++20` Utility Library
 
-## Usage (Planned)
-- Serializing and Deserializing Data
+---
+
+## Usage (Implemented)
 - File Management
 - Randomization
+
+---
+  
+## Usage (Planned)
+- Serializing and Deserializing Data
 - Multithreading
 - Command Buffer
