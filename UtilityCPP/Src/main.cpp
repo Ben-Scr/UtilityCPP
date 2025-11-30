@@ -5,8 +5,11 @@
 
 using namespace UtilityCPP;
 
-class Vec2 {
+struct Vec2 {
 	float x;
+
+	Vec2() {};
+	Vec2(float x) : x(x) {}
 };
 
 int main()
@@ -20,8 +23,6 @@ int main()
 	File::WriteAllText("Test.txt", "Hello World!");
 	File::WriteAllLines("Lines.txt", lines);
 	File::WriteAllBytes("Bytes.txt", bytes);
-
-	Serializer::Serialize<Vec2>("Serialized.txt", Vec2());
 
 	std::cout << File::ReadAllText("Test.txt");
 }
