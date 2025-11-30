@@ -134,10 +134,10 @@
     <ClInclude Include="Src\File\File.hpp" />
     <ClInclude Include="Src\File\Serializer.hpp" />
     <ClInclude Include="Src\Math\Random.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Serialized.txt" />
-    <Text Include="Test.txt" />
+    <ClInclude Include="Utility.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
