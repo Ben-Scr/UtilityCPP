@@ -5,8 +5,6 @@
 #include<array>
 
 namespace BenScr {
-	using byte = uint8_t;
-
 	// Static class
 	class File {
 	public:
@@ -29,7 +27,7 @@ namespace BenScr {
 		}
 
 		template<size_t size>
-		static void WriteAllBytes(const std::string& path, const std::array<byte, size> bytes) {
+		static void WriteAllBytes(const std::string& path, const std::array<char, size> bytes) {
 			std::ofstream file(path, std::ios::binary);
 
 			if (!file.is_open()) {

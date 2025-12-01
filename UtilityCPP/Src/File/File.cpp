@@ -15,7 +15,7 @@ namespace BenScr {
     std::string File::ReadAllText(const std::string& path) {
         std::ifstream file(path, std::ios::ate);
         if (!file.is_open()) {
-            std::cerr << "File couldn't be opened\n";
+            throw std::exception("File couldn't be opened");
             return {};
         }
 
