@@ -146,7 +146,6 @@
     <ClInclude Include="Include\Collections\Types.hpp" />
     <ClInclude Include="Include\IO\File.hpp" />
     <ClInclude Include="Include\IO\Serializer.hpp" />
-    <ClInclude Include="Include\framework.h" />
     <ClInclude Include="Include\Math\Random.hpp" />
     <ClInclude Include="Include\Utility.hpp">
       <SubType>
