@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <chrono>
 
-namespace UtilityCPP {
+namespace BenScr {
 	class Random {
 	public:
 		Random() {

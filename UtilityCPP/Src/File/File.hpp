@@ -4,7 +4,7 @@
 #include<string>
 #include<array>
 
-namespace UtilityCPP {
+namespace BenScr {
 	using byte = uint8_t;
 
 	// Static class

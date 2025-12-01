@@ -1,6 +1,6 @@
 #include "File.hpp"
 
-namespace UtilityCPP {
+namespace BenScr {
 	void File::WriteAllText(const std::string& path, const std::string& text) {
 		std::ofstream file(path);
 

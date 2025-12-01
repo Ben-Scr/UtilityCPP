@@ -3,7 +3,7 @@
 #include <iostream>
 #include<string>
 
-namespace UtilityCPP {
+namespace BenScr {
 	class Serializer {
 	public:
 		template<typename T>

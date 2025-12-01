@@ -32,7 +32,7 @@
     <ClInclude Include="Src\Math\Random.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Utility.hpp">
+    <ClInclude Include="Src\Utility\Converter.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
