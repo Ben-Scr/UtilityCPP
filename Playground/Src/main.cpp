@@ -1,20 +1,17 @@
 #include <iostream>
-#include "File/File.hpp"
-#include "File/Serializer.hpp"
-#include "Utility/Limits.hpp"
-#include "Math/Random.hpp"
-#include "Utility/String.hpp"
-#include "Utility/Converter.hpp"
-#include "Utility/Console.hpp"
-#include "Collections/Types.hpp"
-#include "Utility/Debug.hpp"
-
 #include <unordered_map>
 #include <functional>
 
+#include "Collections/Types.hpp"
+
+#include "Utility/Console.hpp"
+#include "Utility/String.hpp"
+#include "Utility/Converter.hpp"
+
+#include "Math/Random.hpp"
+
 using namespace BenScr;
 
-#if BENSCR_EXPERIMENTAL
 
 bool canExit = false;
 
@@ -85,14 +82,8 @@ void Run() {
 	}
 }
 
-#endif
-
 int main()
 {
-#if BENSCR_EXPERIMENTAL
 	Run();
-#else
-	Console::WriteLine("Hello World!");
-#endif
 	return 0;
 }
