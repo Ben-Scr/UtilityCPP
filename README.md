@@ -3,13 +3,8 @@ A Small `C++20` Utility Library
 
 ---
 
-## Usage (Implemented)
+## Features
 - File Management
 - Randomization
 
 ---
-  
-## Usage (Planned)
-- Serializing and Deserializing Data
-- Multithreading
-- Command Buffer
