@@ -19,8 +19,17 @@ bool canExit = false;
 void RandomExample() {
 	Random rand = Random();
 
+	Console::WriteLine(String::ToString("Number: ", 1, 2, 3, 4, 5));
 	Console::WriteLine("Random Number [1 - 100]: ", rand.Next<int>(1, 100));
 	Console::WriteLine("Random Number [0.0f - 1.0f]: ", rand.Next<float>(.0f, 1.0f));
+}
+
+void StringExample() {
+	std::string sample = "  Hello, UtilityCPP!  ";
+	Console::WriteLine("Original String: '", sample, "'");
+	Console::WriteLine("Trimmed String: '", String::Trim(sample), "'");
+	Console::WriteLine("Uppercase String: '", String::ToUpper(sample), "'");
+	Console::WriteLine("Lowercase String: '", String::ToLower(sample), "'");
 }
 
 void Exit() {
@@ -30,8 +39,10 @@ void Exit() {
 
 std::unordered_map<std::string, std::function<void()>> functionMap{
 	{ "Random", RandomExample },
+	{ "String",StringExample },
 	{ "Exit", Exit }
 };
+
 
 void PressEnterToContinue()
 {
@@ -50,6 +61,7 @@ void DisplayOptions() {
 
 	Console::WriteLine(String::SEPERATOR_40);
 	std::string input = Console::ReadLine();
+	Console::Clear();
 
 	i = 0;
 	int choice = 0;
@@ -65,14 +77,17 @@ void DisplayOptions() {
 	}
 
 	Console::WriteLine(String::SEPERATOR_40);
-	PressEnterToContinue();
-	Console::Clear();
+
+	if (!canExit) {
+		PressEnterToContinue();
+		Console::Clear();
+	}
 }
 
 bool EnteredYes()
 {
 	bool enteredYes = false;
-	enteredYes = String::ToLower(Console::ReadLine()) == "y";
+	//enteredYes = String::ToLower(Console::ReadLine()) == "y";
 	return enteredYes;
 }
 
