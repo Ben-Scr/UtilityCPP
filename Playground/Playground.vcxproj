@@ -81,7 +81,7 @@
     <IncludePath>C:\Users\benso\source\repos\UtilityCPP\UtilityCPP\Include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\benso\source\repos\UtilityCPP\UtilityCPP\Include</IncludePath>
+    <IncludePath>$(ProjectDir)..\UtilityCPP\Include</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

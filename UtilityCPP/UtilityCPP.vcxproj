@@ -156,6 +156,7 @@
     <ClInclude Include="Include\Utility\Debug.hpp" />
     <ClInclude Include="Include\Utility\Limits.hpp" />
     <ClInclude Include="Include\Utility\String.hpp" />
+    <ClInclude Include="Include\Utility\Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\IO\File.cpp" />
