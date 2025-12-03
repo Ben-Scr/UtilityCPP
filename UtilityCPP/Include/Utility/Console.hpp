@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <conio.h>  
 
 namespace  BenScr {
     class Console
@@ -21,6 +22,10 @@ namespace  BenScr {
             std::string input;
             std::getline(std::cin, input);
             return input;
+        }
+
+        static char ReadKey() {
+            return  _getch();
         }
 
         static void Clear()

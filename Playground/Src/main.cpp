@@ -4,7 +4,10 @@
 
 #include "Collections/Types.hpp"
 
-#include "Utility/Timer.hpp"
+#include "Time/TimeSpan.hpp"
+#include "Time/DateTime.hpp"
+#include "Time/Timer.hpp"
+
 #include "Utility/Console.hpp"
 #include "Utility/String.hpp"
 #include "Utility/Converter.hpp"
@@ -15,11 +18,11 @@ using namespace BenScr;
 
 
 bool canExit = false;
+Timer timer = Timer();
 
 void RandomExample() {
 	Random rand = Random();
 
-	Console::WriteLine(String::ToString("Number: ", 1, 2, 3, 4, 5));
 	Console::WriteLine("Random Number [1 - 100]: ", rand.Next<int>(1, 100));
 	Console::WriteLine("Random Number [0.0f - 1.0f]: ", rand.Next<float>(.0f, 1.0f));
 }
@@ -33,29 +36,16 @@ void StringExample() {
 }
 
 void TimerExample() {
-	Timer timer = Timer();
-
-	while (true)
-	{
-		Console::WriteLine(timer.ElapsedSeconds());
-	}
+	Console::WriteLine("Elasped time since startup: ", timer.ToString());
 }
 
 void DateTimeExample() {
 	DateTime now = DateTime::Now();
 	Console::WriteLine("Current Date and Time:");
-	Console::WriteLine(String::ToString(
-		now.year, "-",
-		(now.month < 10 ? "0" : ""), now.month, "-",
-		(now.day < 10 ? "0" : ""), now.day, " ",
-		(now.hour < 10 ? "0" : ""), now.hour, ":",
-		(now.minute < 10 ? "0" : ""), now.minute, ":",
-		(now.second < 10 ? "0" : ""), now.second, ".",
-		now.millisecond, now.microsecond
-	));
+	Console::WriteLine(now.ToShortString());
 
 	TimeSpan span = TimeSpan(0, 0, 1000);
-	Console::WriteLine(span.ToString());
+	Console::WriteLine(span.ToShortString());
 }
 
 void Exit() {
