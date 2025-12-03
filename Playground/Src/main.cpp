@@ -4,10 +4,12 @@
 
 #include "Collections/Types.hpp"
 
+
 #include "Time/TimeSpan.hpp"
 #include "Time/DateTime.hpp"
 #include "Time/Timer.hpp"
 
+#include "Utility/Debug.hpp"
 #include "Utility/Console.hpp"
 #include "Utility/String.hpp"
 #include "Utility/Converter.hpp"
@@ -57,6 +59,7 @@ void DateTimeExample() {
 void TimeSpanExample() {
 	Console::WriteLine("Timespan(0(h), 0(m), 1000(s))");
 
+	
 	TimeSpan span = TimeSpan(0, 0, 1000);
 	Console::WriteLine(span.ToShortString());
 }
@@ -80,6 +83,7 @@ std::unordered_map<std::string, std::function<void()>> functionMap{
 
 void PressEnterToContinue()
 {
+	Debug::Log(LogLevel::Info,"Press Enter to continue...");
 	Console::WriteLine("Press Enter to continue...");
 	Console::ReadLine();
 }

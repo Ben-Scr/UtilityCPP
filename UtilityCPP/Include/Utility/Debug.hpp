@@ -13,21 +13,22 @@ namespace BenScr {
 	class Debug {
 	public:
 		template<typename... Args>
-		static void Log(Args&&... args) {
+		static void Log(LogLevel level = LogLevel::Info, Args&&... args) {
+			DateTime now = DateTime::Now();
 
-			//switch (level) {
-			//case LogLevel::Info:
-			//	std::cout << "[INFO] ";
-			//	break;
+			switch (level) {
+			case LogLevel::Info:
+				std::cout << "[" << now.ToTimeString() << "][INFO] ";
+				break;
 
-			//case LogLevel::Warning:
-			//	std::cout << "[WARNING] ";
-			//	break;
+			case LogLevel::Warning:
+				std::cout << "[" << now.ToTimeString() << "][WARNING] ";
+				break;
 
-			//case LogLevel::Error:
-			//	std::cout << "[ERROR] ";
-			//	break;
-			//}
+			case LogLevel::Error:
+				std::cout << "[" << now.ToTimeString() << "][ERROR] ";
+				break;
+			}
 			(std::cout << ... << args);
 			std::cout << '\n';
 		}

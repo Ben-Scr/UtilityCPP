@@ -3,7 +3,6 @@
 
 namespace BenScr {
     std::string Timer::ToString() {
-        TimeSpan elapsed(*this);
-        return elapsed.ToShortString();
+        return TimeSpan(*this).ToShortString();
     }
 }

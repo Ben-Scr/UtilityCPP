@@ -54,6 +54,9 @@
     <ClInclude Include="Include\Time\DateTime.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Time\TimeOnly.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\IO\File.cpp">
