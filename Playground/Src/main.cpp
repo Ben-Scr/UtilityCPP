@@ -20,6 +20,14 @@ using namespace BenScr;
 bool canExit = false;
 Timer timer = Timer();
 
+
+bool EnteredYes()
+{
+	bool enteredYes = false;
+	enteredYes = String::ToLower(Console::ReadLine()) == "y";
+	return enteredYes;
+}
+
 void RandomExample() {
 	Random rand = Random();
 
@@ -40,15 +48,22 @@ void TimerExample() {
 }
 
 void DateTimeExample() {
-	DateTime now = DateTime::Now();
+	DateTime dayTime = DateTime::Now();
 	Console::WriteLine("Current Date and Time:");
-	Console::WriteLine(now.ToShortString());
+	Console::WriteLine(dayTime.ToShortString());
+	Console::WriteLine("Current day of week: ", dayTime.GetWeekDayString());
+}
+
+void TimeSpanExample() {
+	Console::WriteLine("Timespan(0(h), 0(m), 1000(s))");
 
 	TimeSpan span = TimeSpan(0, 0, 1000);
 	Console::WriteLine(span.ToShortString());
 }
 
 void Exit() {
+	Console::WriteLine("Are you sure you want to exit? (y/n): ");
+	if (!EnteredYes()) return;
 	Console::WriteLine("Exiting...");
 	canExit = true;
 }
@@ -58,6 +73,7 @@ std::unordered_map<std::string, std::function<void()>> functionMap{
 	{ "String",StringExample },
 	{ "Timer", TimerExample },
 	{ "DateTime",DateTimeExample },
+	{ "TimeSpan", TimeSpanExample },
 	{ "Exit", Exit }
 };
 
@@ -93,6 +109,9 @@ void DisplayOptions() {
 			}
 		}
 	}
+	else {
+		Console::WriteLine("Invalid input");
+	}
 
 	Console::WriteLine(String::SEPERATOR_40);
 
@@ -100,13 +119,6 @@ void DisplayOptions() {
 		PressEnterToContinue();
 		Console::Clear();
 	}
-}
-
-bool EnteredYes()
-{
-	bool enteredYes = false;
-	//enteredYes = String::ToLower(Console::ReadLine()) == "y";
-	return enteredYes;
 }
 
 void Run() {

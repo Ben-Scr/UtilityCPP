@@ -2,6 +2,16 @@
 #include <chrono>
 
 namespace BenScr {
+	enum class DayOfWeek {
+		Sunday = 0,
+		Monday = 1,
+		Tuesday = 2,
+		Wednesday = 3,
+		Thursday = 4,
+		Friday = 5,
+		Saturday = 6
+	};
+
 	struct DateTime {
 		int year;
 		int month;
@@ -37,6 +47,50 @@ namespace BenScr {
 			};
 		}
 
+		static int GetWeekday(int year, int month, int day)
+		{
+			if (month < 3)
+			{
+				month += 12;
+				year--;
+			}
+
+			int K = year % 100;
+			int J = year / 100;
+
+			int h = (day + 13 * (month + 1) / 5 + K + K / 4 + J / 4 + 5 * J) % 7;
+			int weekday = (h + 6) % 7;
+			return weekday;
+		}
+		int GetWeekday() const
+		{
+			int day = this->day;
+			int year = this->year;
+			int month = this->month;
+
+			if (month < 3)
+			{
+				month += 12;
+				year--;
+			}
+
+			int K = year % 100;
+			int J = year / 100;
+
+			int h = (day + 13 * (month + 1) / 5 + K + K / 4 + J / 4 + 5 * J) % 7;
+			int weekday = (h + 6) % 7;
+			return weekday;
+		}
+
+		std::string GetWeekDayString() const {
+			static const char* daysOfWeek[] = {
+				"Sunday", "Monday", "Tuesday", "Wednesday",
+				"Thursday", "Friday", "Saturday"
+			};
+			int weekday = GetWeekday();
+			return daysOfWeek[weekday];
+		}
+
 		std::string ToDateString() const {
 			return std::to_string(year) + "-" +
 				(month < 10 ? "0" : "") + std::to_string(month) + "-" +
@@ -68,5 +122,4 @@ namespace BenScr {
 				std::to_string(millisecond) + std::to_string(microsecond);
 		}
 	};
-
 }

@@ -1,9 +1,9 @@
 #pragma once
 #include <cstdint>
 #include <string>
+#include "Timer.hpp"
 
 namespace BenScr {
-	struct Timer;
 
 	struct TimeSpan {
 		uint16_t days = 0;
