@@ -25,9 +25,9 @@ namespace BenScr {
 		template<typename... Args>
 		static std::string ToString(Args&&... args)
 		{
-			std::string s;
-			(s += ... += args);
-			return s;
+			std::ostringstream stream;
+			(stream << ... << args);
+			return stream.str();
 		}
 
 		static std::string ToUpper(std::string text)

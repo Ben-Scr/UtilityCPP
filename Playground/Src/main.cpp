@@ -2,9 +2,9 @@
 #include <unordered_map>
 #include <functional>
 
-
 #include "Collections/Types.hpp"
 
+#include "Utility/Timer.hpp"
 #include "Utility/Console.hpp"
 #include "Utility/String.hpp"
 #include "Utility/Converter.hpp"
@@ -32,6 +32,32 @@ void StringExample() {
 	Console::WriteLine("Lowercase String: '", String::ToLower(sample), "'");
 }
 
+void TimerExample() {
+	Timer timer = Timer();
+
+	while (true)
+	{
+		Console::WriteLine(timer.ElapsedSeconds());
+	}
+}
+
+void DateTimeExample() {
+	DateTime now = DateTime::Now();
+	Console::WriteLine("Current Date and Time:");
+	Console::WriteLine(String::ToString(
+		now.year, "-",
+		(now.month < 10 ? "0" : ""), now.month, "-",
+		(now.day < 10 ? "0" : ""), now.day, " ",
+		(now.hour < 10 ? "0" : ""), now.hour, ":",
+		(now.minute < 10 ? "0" : ""), now.minute, ":",
+		(now.second < 10 ? "0" : ""), now.second, ".",
+		now.millisecond, now.microsecond
+	));
+
+	TimeSpan span = TimeSpan(0, 0, 1000);
+	Console::WriteLine(span.ToString());
+}
+
 void Exit() {
 	Console::WriteLine("Exiting...");
 	canExit = true;
@@ -40,6 +66,8 @@ void Exit() {
 std::unordered_map<std::string, std::function<void()>> functionMap{
 	{ "Random", RandomExample },
 	{ "String",StringExample },
+	{ "Timer", TimerExample },
+	{ "DateTime",DateTimeExample },
 	{ "Exit", Exit }
 };
 
