@@ -155,7 +155,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Console.hpp" />
     <ClInclude Include="Include\Utility\Converter.hpp" />
     <ClInclude Include="Include\Utility\Debug.hpp" />
     <ClInclude Include="Include\Utility\Limits.hpp" />

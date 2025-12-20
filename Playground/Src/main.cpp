@@ -2,6 +2,8 @@
 #include <unordered_map>
 #include <functional>
 
+#include "Console.hpp"
+
 #include "Collections/Types.hpp"
 
 
@@ -10,7 +12,6 @@
 #include "Time/Timer.hpp"
 
 #include "Utility/Debug.hpp"
-#include "Utility/Console.hpp"
 #include "Utility/String.hpp"
 #include "Utility/Converter.hpp"
 
