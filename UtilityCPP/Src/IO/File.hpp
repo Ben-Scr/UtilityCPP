@@ -5,7 +5,6 @@
 #include<array>
 
 namespace BenScr {
-	// Static class
 	class File {
 	public:
 		static void WriteAllText(const std::string& path, const std::string& text);

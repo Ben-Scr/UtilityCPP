@@ -4,14 +4,10 @@
 
 #include "Console.hpp"
 
-#include "Collections/Types.hpp"
-
-
 #include "Time/TimeSpan.hpp"
 #include "Time/DateTime.hpp"
 #include "Time/Timer.hpp"
 
-#include "Utility/Debug.hpp"
 #include "Utility/StringHelper.hpp"
 #include "Utility/Converter.hpp"
 
@@ -32,10 +28,8 @@ bool EnteredYes()
 }
 
 void RandomExample() {
-	Random rand = Random();
-
-	Console::WriteLine("Random Number [1 - 100]: ", rand.Next<int>(1, 100));
-	Console::WriteLine("Random Number [0.0f - 1.0f]: ", rand.Next<float>(.0f, 1.0f));
+	Console::WriteLine("Random Number [1 - 100]: ", Random::NextInt32(1, 100));
+	Console::WriteLine("Random Number [0.0f - 1.0f]: ", Random::NextFloat(.0f, 1.0f));
 }
 
 void StringExample() {
