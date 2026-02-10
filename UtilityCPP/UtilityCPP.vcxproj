@@ -143,28 +143,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Collections\Types.hpp" />
-    <ClInclude Include="Include\IO\File.hpp" />
-    <ClInclude Include="Include\IO\Serializer.hpp" />
-    <ClInclude Include="Include\Math\Random.hpp" />
-    <ClInclude Include="Include\Time\TimeOnly.hpp">
+    <ClInclude Include="Src\Collections\Types.hpp" />
+    <ClInclude Include="Src\IO\File.hpp" />
+    <ClInclude Include="Src\IO\Serializer.hpp" />
+    <ClInclude Include="Src\Math\Random.hpp" />
+    <ClInclude Include="Src\Time\TimeOnly.hpp">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Include\Utility.hpp">
+    <ClInclude Include="Src\Utility.hpp">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Converter.hpp" />
-    <ClInclude Include="Include\Utility\Debug.hpp" />
-    <ClInclude Include="Include\Utility\Limits.hpp" />
-    <ClInclude Include="Include\Utility\String.hpp" />
-    <ClInclude Include="Include\Time\Timer.hpp" />
-    <ClInclude Include="Include\Time\DateTime.hpp">
+    <ClInclude Include="Src\Utility\Converter.hpp" />
+    <ClInclude Include="Src\Utility\Debug.hpp" />
+    <ClInclude Include="Src\Utility\Limits.hpp" />
+    <ClInclude Include="Src\Utility\String.hpp" />
+    <ClInclude Include="Src\Time\Timer.hpp" />
+    <ClInclude Include="Src\Time\DateTime.hpp">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Include\Time\TimeSpan.hpp">
+    <ClInclude Include="Src\Time\TimeSpan.hpp">
       <SubType>
       </SubType>
     </ClInclude>

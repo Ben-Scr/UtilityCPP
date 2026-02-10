@@ -15,43 +15,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Utility\Converter.hpp">
+    <ClInclude Include="Src\Utility\Converter.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Debug.hpp">
+    <ClInclude Include="Src\Utility\Debug.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Limits.hpp">
+    <ClInclude Include="Src\Utility\Limits.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\String.hpp">
+    <ClInclude Include="Src\Utility\String.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Collections\Types.hpp">
+    <ClInclude Include="Src\Collections\Types.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\IO\File.hpp">
+    <ClInclude Include="Src\IO\File.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\IO\Serializer.hpp">
+    <ClInclude Include="Src\IO\Serializer.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Math\Random.hpp">
+    <ClInclude Include="Src\Math\Random.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility.hpp">
+    <ClInclude Include="Src\Utility.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Time\Timer.hpp">
+    <ClInclude Include="Src\Time\Timer.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Time\TimeSpan.hpp">
+    <ClInclude Include="Src\Time\TimeSpan.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Time\DateTime.hpp">
+    <ClInclude Include="Src\Time\DateTime.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Time\TimeOnly.hpp">
+    <ClInclude Include="Src\Time\TimeOnly.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
