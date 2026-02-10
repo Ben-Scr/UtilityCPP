@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Src\Collections\Types.hpp" />
+    <ClInclude Include="Src\IO\Console.hpp" />
     <ClInclude Include="Src\IO\File.hpp" />
     <ClInclude Include="Src\IO\Serializer.hpp" />
     <ClInclude Include="Src\Math\Random.hpp" />
@@ -170,6 +171,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\IO\Console.cpp" />
     <ClCompile Include="Src\IO\File.cpp" />
     <ClCompile Include="Src\Time\Timer.cpp" />
     <ClCompile Include="Src\Time\TimeSpan.cpp" />

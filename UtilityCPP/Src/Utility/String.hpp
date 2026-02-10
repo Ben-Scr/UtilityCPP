@@ -4,7 +4,7 @@
 #include <string>
 
 namespace BenScr {
-	class String
+	class StringHelper
 	{
 	public:
 		static constexpr const char* SEPERATOR_20 = "--------------------";
