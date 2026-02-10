@@ -1,4 +1,4 @@
-#include "../../Include/IO/File.hpp"
+#include "File.hpp"
 
 namespace BenScr {
 	void File::WriteAllText(const std::string& path, const std::string& text) {

@@ -72,7 +72,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\benso\source\repos\2025\Finished\UtilityCPP\UtilityCPP\Src</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\benso\source\repos\2025\Finished\UtilityCPP\UtilityCPP\Src</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -144,7 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Src\Collections\Types.hpp" />
-    <ClInclude Include="Src\IO\Console.hpp" />
+    <ClInclude Include="Src\Utility\Console.hpp" />
     <ClInclude Include="Src\IO\File.hpp" />
     <ClInclude Include="Src\IO\Serializer.hpp" />
     <ClInclude Include="Src\Math\Random.hpp" />
@@ -159,8 +162,7 @@
     <ClInclude Include="Src\Utility\Converter.hpp" />
     <ClInclude Include="Src\Utility\Debug.hpp" />
     <ClInclude Include="Src\Utility\Limits.hpp" />
-    <ClInclude Include="Src\Utility\String.hpp" />
-    <ClInclude Include="Src\Time\Timer.hpp" />
+    <ClInclude Include="Src\Utility\StringHelper.hpp" />
     <ClInclude Include="Src\Time\DateTime.hpp">
       <SubType>
       </SubType>
@@ -169,11 +171,11 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="Src\Time\Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\IO\Console.cpp" />
+    <ClCompile Include="Src\Utility\Console.cpp" />
     <ClCompile Include="Src\IO\File.cpp" />
-    <ClCompile Include="Src\Time\Timer.cpp" />
     <ClCompile Include="Src\Time\TimeSpan.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

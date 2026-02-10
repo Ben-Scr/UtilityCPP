@@ -24,7 +24,7 @@
     <ClInclude Include="Src\Utility\Limits.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Utility\String.hpp">
+    <ClInclude Include="Src\Utility\StringHelper.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Src\Collections\Types.hpp">
@@ -42,9 +42,6 @@
     <ClInclude Include="Src\Utility.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Time\Timer.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Time\TimeSpan.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -54,7 +51,10 @@
     <ClInclude Include="Src\Time\TimeOnly.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Src\IO\Console.hpp">
+    <ClInclude Include="Src\Utility\Console.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Time\Timer.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,13 +62,10 @@
     <ClCompile Include="Src\IO\File.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Time\Timer.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Time\TimeSpan.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Src\IO\Console.cpp">
+    <ClCompile Include="Src\Utility\Console.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

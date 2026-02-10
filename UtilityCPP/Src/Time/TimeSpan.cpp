@@ -1,8 +1,8 @@
-#include "../../Include/Time/TimeSpan.hpp"
-#include "../../Include/Time/Timer.hpp"
+#include "TimeSpan.hpp"
+#include "Timer.hpp"
 
 namespace BenScr {
 	TimeSpan::TimeSpan(Timer timer) {
-		AddMicroseconds(timer.ElapsedMicroseconds());
+		AddMicroseconds(timer.GetTotalElapsedAs<std::chrono::microseconds>());
 	}
 }

@@ -73,7 +73,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)..\UtilityCPP\Include</IncludePath>
+    <IncludePath>$(ProjectDir)..\UtilityCPP\Src</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(ProjectDir)..\UtilityCPP\Include</IncludePath>
@@ -82,7 +82,7 @@
     <IncludePath>$(ProjectDir)..\UtilityCPP\Include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\UtilityCPP\Include</IncludePath>
+    <IncludePath>$(ProjectDir)..\UtilityCPP\Src</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

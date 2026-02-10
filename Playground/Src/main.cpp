@@ -12,7 +12,7 @@
 #include "Time/Timer.hpp"
 
 #include "Utility/Debug.hpp"
-#include "Utility/String.hpp"
+#include "Utility/StringHelper.hpp"
 #include "Utility/Converter.hpp"
 
 #include "Math/Random.hpp"
@@ -27,7 +27,7 @@ Timer timer = Timer();
 bool EnteredYes()
 {
 	bool enteredYes = false;
-	enteredYes = String::ToLower(Console::ReadLine()) == "y";
+	enteredYes = StringHelper::ToLower(Console::ReadLine()) == "y";
 	return enteredYes;
 }
 
@@ -41,13 +41,13 @@ void RandomExample() {
 void StringExample() {
 	std::string sample = "  Hello, UtilityCPP!  ";
 	Console::WriteLine("Original String: '", sample, "'");
-	Console::WriteLine("Trimmed String: '", String::Trim(sample), "'");
-	Console::WriteLine("Uppercase String: '", String::ToUpper(sample), "'");
-	Console::WriteLine("Lowercase String: '", String::ToLower(sample), "'");
+	Console::WriteLine("Trimmed String: '", StringHelper::Trim(sample), "'");
+	Console::WriteLine("Uppercase String: '", StringHelper::ToUpper(sample), "'");
+	Console::WriteLine("Lowercase String: '", StringHelper::ToLower(sample), "'");
 }
 
 void TimerExample() {
-	Console::WriteLine("Elasped time since startup: ", timer.ToString());
+	Console::WriteLine("Elasped time since startup: ", StringHelper::ToString(timer));
 }
 
 void DateTimeExample() {
@@ -84,21 +84,20 @@ std::unordered_map<std::string, std::function<void()>> functionMap{
 
 void PressEnterToContinue()
 {
-	Debug::Log(LogLevel::Info,"Press Enter to continue...");
 	Console::WriteLine("Press Enter to continue...");
 	Console::ReadLine();
 }
 
 void DisplayOptions() {
 	Console::WriteLine("Choose one of the following options (1-", functionMap.size(), ")");
-	Console::WriteLine(String::SEPERATOR_40);
+	//Console::WriteLine(StringHelper::SEPERATOR_40);
 
 	int i = 0;
 	for (const auto& pair : functionMap) {
 		Console::WriteLine(++i, ") ", pair.first);
 	}
 
-	Console::WriteLine(String::SEPERATOR_40);
+	//Console::WriteLine(StringHelper::SEPERATOR_40);
 	std::string input = Console::ReadLine();
 	Console::Clear();
 
@@ -108,7 +107,7 @@ void DisplayOptions() {
 		for (const auto& pair : functionMap) {
 			if (choice == ++i) {
 				Console::WriteLine("You choose ", pair.first);
-				Console::WriteLine(String::SEPERATOR_40);
+				//Console::WriteLine(String::SEPERATOR_40);
 				pair.second();
 				break;
 			}
@@ -118,7 +117,7 @@ void DisplayOptions() {
 		Console::WriteLine("Invalid input");
 	}
 
-	Console::WriteLine(String::SEPERATOR_40);
+	//Console::WriteLine(String::SEPERATOR_40);
 
 	if (!canExit) {
 		PressEnterToContinue();
@@ -128,7 +127,7 @@ void DisplayOptions() {
 
 void Run() {
 	while (!canExit) {
-		Console::WriteLine(String::SEPERATOR_40);
+		//Console::WriteLine(String::SEPERATOR_40);
 		DisplayOptions();
 	}
 }
