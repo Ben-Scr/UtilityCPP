@@ -147,7 +147,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Src\Collections\Types.hpp" />
-    <ClInclude Include="Src\IO\FileStream.hpp" />
     <ClInclude Include="Src\Utility\Console.hpp" />
     <ClInclude Include="Src\IO\File.hpp" />
     <ClInclude Include="Src\IO\Serializer.hpp" />
@@ -175,7 +174,6 @@
     <ClInclude Include="Src\Time\Timer.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\IO\FileStreamcpp.cpp" />
     <ClCompile Include="Src\Math\Random.cpp" />
     <ClCompile Include="Src\Utility\Console.cpp" />
     <ClCompile Include="Src\IO\File.cpp" />

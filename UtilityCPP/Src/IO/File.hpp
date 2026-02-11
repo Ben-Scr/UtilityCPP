@@ -1,20 +1,25 @@
 #pragma once
 #include <fstream>
 #include <iostream>
+
 #include<string>
 #include<array>
+#include <vector>
 
 namespace BenScr {
 	class File {
 	public:
+		static bool Exists(const std::string& path);
+
+
 		static void WriteAllText(const std::string& path, const std::string& text);
 
-		template<size_t size>
-		static void WriteAllLines(const std::string& path, const std::array<std::string, size> lines) {
+		template<size_t Size>
+		static void WriteAllLines(const std::string& path, const std::array<std::string, Size> lines) {
 			std::ofstream file(path);
 
 			if (!file.is_open()) {
-				return;
+				throw std::runtime_error("File couldn't be opened");
 			}
 
 			for (const std::string& line : lines) {
@@ -25,12 +30,12 @@ namespace BenScr {
 			file.close();
 		}
 
-		template<size_t size>
-		static void WriteAllBytes(const std::string& path, const std::array<char, size> bytes) {
+		template<size_t Size>
+		static void WriteAllBytes(const std::string& path, const std::array<std::uint8_t, Size> bytes) {
 			std::ofstream file(path, std::ios::binary);
 
 			if (!file.is_open()) {
-				return;
+				throw std::runtime_error("File couldn't be opened");
 			}
 
 			file.write(reinterpret_cast<const char*>(bytes.data()), bytes.size());
@@ -39,5 +44,6 @@ namespace BenScr {
 
 
 		static std::string ReadAllText(const std::string& path);
+		static std::vector<std::uint8_t> ReadAllBytes(const std::string& path);
 	};
 }

@@ -3,7 +3,8 @@
 #include <functional>
 
 #include "Utility/Console.hpp"
-#include "IO/FileStream.hpp"
+
+#include "IO/File.hpp"
 
 #include "Time/TimeSpan.hpp"
 #include "Time/DateTime.hpp"
@@ -55,7 +56,7 @@ void DateTimeExample() {
 void TimeSpanExample() {
 	Console::WriteLine("Timespan(0(h), 0(m), 1000(s))");
 
-	
+
 	TimeSpan span = TimeSpan(0, 0, 1000);
 	Console::WriteLine(span.ToShortString());
 }
@@ -130,8 +131,12 @@ void Run() {
 
 int main()
 {
-	const FileStream fs = FileStream("Test.txt", std::ios::trunc);
-	bool b = fs.IsOpen();
+	File::WriteAllText("Test.txt", "Hello World!");
+	Console::WriteLine(File::ReadAllText("Test.txt"));
+
+	File::WriteAllBytes("Test.bin", std::array<std::uint8_t, 13>{1, 2, 3});
+	Console::WriteLine(File::ReadAllBytes("Test.bin"));
+
 
 	Run();
 	return 0;

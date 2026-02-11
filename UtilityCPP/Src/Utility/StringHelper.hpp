@@ -134,4 +134,18 @@ namespace BenScr {
 			return text.find(toFind) != std::string::npos;
 		}
 	};
+
+	inline std::ostream& operator<<(std::ostream& oss, const std::vector<std::uint8_t>& vec) {
+		const auto size = vec.size();
+
+		oss << "[" << static_cast<int>(vec[0]);
+
+		for (auto i{ 1uz }; i < size; i++) {
+			oss << ", " << static_cast<int>(vec[i]);
+		}
+		
+		oss << "]";
+
+		return oss;
+	}
 }
