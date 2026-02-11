@@ -2,7 +2,8 @@
 #include <unordered_map>
 #include <functional>
 
-#include "Console.hpp"
+#include "Utility/Console.hpp"
+#include "IO/FileStream.hpp"
 
 #include "Time/TimeSpan.hpp"
 #include "Time/DateTime.hpp"
@@ -121,6 +122,7 @@ void DisplayOptions() {
 
 void Run() {
 	while (!canExit) {
+		Console::SetTitle("Utility CPP");
 		//Console::WriteLine(String::SEPERATOR_40);
 		DisplayOptions();
 	}
@@ -128,6 +130,9 @@ void Run() {
 
 int main()
 {
+	const FileStream fs = FileStream("Test.txt", std::ios::trunc);
+	bool b = fs.IsOpen();
+
 	Run();
 	return 0;
 }
