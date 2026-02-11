@@ -13,7 +13,9 @@
 #include "Utility/StringHelper.hpp"
 #include "Utility/Converter.hpp"
 
+#include "Utility/Limits.hpp"
 #include "Math/Random.hpp"
+#include "Collections/Types.hpp"
 
 using namespace BenScr;
 
@@ -68,12 +70,49 @@ void Exit() {
 	canExit = true;
 }
 
+void FileTest() {
+	Console::WriteLine("Enter a text you want to save in storage:");
+	std::string input = Console::ReadLine();
+	File::WriteAllText("Test.txt", input);
+	Console::WriteLine("Saved txt file output: ", File::ReadAllText("Test.txt"));
+
+
+	File::WriteAllBytes("Test.bin", std::array<std::uint8_t, 13>{1, 2, 3});
+	Console::WriteLine("Saved bin file output:" ,File::ReadAllBytes("Test.bin"));
+}
+
+void Limits() {
+	Console::WriteLine("Unsigned integer max values:");
+	Console::WriteLine("u8: ", MaxValue<u8>());
+	Console::WriteLine("u16: ", MaxValue<u16>());
+	Console::WriteLine("u32: ", MaxValue<u32>());
+	Console::WriteLine("u64: ", MaxValue<u64>());
+	Console::WriteLine("\nInteger max values:");
+	Console::WriteLine("i8: ", MaxValue<i8>());
+	Console::WriteLine("i16: ", MaxValue<i16>());
+	Console::WriteLine("i32: ", MaxValue<i32>());
+	Console::WriteLine("i64: ", MaxValue<i64>());
+
+	Console::WriteLine("\nUnsigned integer min values:");
+	Console::WriteLine("u8: ", MinValue<u8>());
+	Console::WriteLine("u16: ", MinValue<u16>());
+	Console::WriteLine("u32: ", MinValue<u32>());
+	Console::WriteLine("u64: ", MinValue<u64>());
+	Console::WriteLine("\nInteger min values:");
+	Console::WriteLine("i8: ", MinValue<i8>());
+	Console::WriteLine("i16: ", MinValue<i16>());
+	Console::WriteLine("i32: ", MinValue<i32>());
+	Console::WriteLine("i64: ", MinValue<i64>());
+}
+
 std::unordered_map<std::string, std::function<void()>> functionMap{
 	{ "Random", RandomExample },
 	{ "String",StringExample },
 	{ "Timer", TimerExample },
 	{ "DateTime",DateTimeExample },
 	{ "TimeSpan", TimeSpanExample },
+	{ "Limits" , Limits},
+	{ "File", FileTest },
 	{ "Exit", Exit }
 };
 
@@ -131,13 +170,6 @@ void Run() {
 
 int main()
 {
-	File::WriteAllText("Test.txt", "Hello World!");
-	Console::WriteLine(File::ReadAllText("Test.txt"));
-
-	File::WriteAllBytes("Test.bin", std::array<std::uint8_t, 13>{1, 2, 3});
-	Console::WriteLine(File::ReadAllBytes("Test.bin"));
-
-
 	Run();
 	return 0;
 }
