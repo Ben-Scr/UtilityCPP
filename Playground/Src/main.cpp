@@ -106,7 +106,7 @@ void Limits() {
 	Console::WriteLine("i64: ", MinValue<i64>());
 }
 
-std::unordered_map<std::string, std::function<void()>> functionMap{
+std::vector<std::pair<std::string, std::function<void()>>> functionMap = {
 	{ "Random", RandomExample },
 	{ "String",StringExample },
 	{ "Timer", TimerExample },
