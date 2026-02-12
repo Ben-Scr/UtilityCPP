@@ -42,6 +42,10 @@ namespace BenScr {
 			file.close();
 		}
 
+		template<typename T>
+		static void WriteT(const std::string& path, const T& obj) {
+
+		}
 
 		static std::string ReadAllText(const std::string& path);
 		static std::vector<std::uint8_t> ReadAllBytes(const std::string& path);

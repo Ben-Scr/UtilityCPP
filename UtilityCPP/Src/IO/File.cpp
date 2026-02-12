@@ -6,6 +6,7 @@ namespace BenScr {
 		return std::filesystem::exists(path);
 	}
 
+
 	void File::WriteAllText(const std::string& path, const std::string& text) {
 		std::ofstream file(path);
 
