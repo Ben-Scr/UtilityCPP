@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Collections\Array.hpp" />
     <ClInclude Include="Src\Collections\Types.hpp" />
     <ClInclude Include="Src\Utility\Console.hpp" />
     <ClInclude Include="Src\IO\File.hpp" />

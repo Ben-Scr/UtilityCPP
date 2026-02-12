@@ -23,6 +23,8 @@ namespace BenScr {
 	};
 
 	struct DateTime {
+		DateTime() = default;
+
 		static DateTime Now() {
 			const auto now = std::chrono::system_clock::now();
 
@@ -109,7 +111,7 @@ namespace BenScr {
 				(Second < 10 ? "0" : "") + std::to_string(Second);
 		}
 
-		std::string ToShortString() const {
+		std::string ToDateTimeString() const {
 			return std::to_string(Year) + "-" +
 				(Month < 10 ? "0" : "") + std::to_string(Month) + "-" +
 				(Day < 10 ? "0" : "") + std::to_string(Day) + " " +
@@ -118,7 +120,7 @@ namespace BenScr {
 				(Second < 10 ? "0" : "") + std::to_string(Second);
 		}
 
-		std::string ToString() const {
+		std::string ToLongString() const {
 			return std::to_string(Year) + "-" +
 				(Month < 10 ? "0" : "") + std::to_string(Month) + "-" +
 				(Day < 10 ? "0" : "") + std::to_string(Day) + " " +
@@ -142,4 +144,8 @@ namespace BenScr {
 			Year{ y }, Month{ m }, Day{ d }, Hour{ h }, Minute{ minute }, Second{ s }, Millisecond{ ms }, Microsecond{ micro } {
 		}
 	};
+
+	std::ostream& operator<<(std::ostream& ostream, const DateTime& dateTime) {
+		return ostream << dateTime.ToDateTimeString();
+	}
 }

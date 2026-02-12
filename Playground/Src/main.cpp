@@ -16,6 +16,7 @@
 #include "Utility/Limits.hpp"
 #include "Math/Random.hpp"
 #include "Collections/Types.hpp"
+#include "Collections/Array.hpp"
 
 using namespace BenScr;
 
@@ -51,7 +52,7 @@ void TimerExample() {
 void DateTimeExample() {
 	DateTime dayTime = DateTime::Now();
 	Console::WriteLine("Current Date and Time:");
-	Console::WriteLine(dayTime.ToShortString());
+	Console::WriteLine(dayTime.ToDateTimeString());
 	Console::WriteLine("Current day of week: ", dayTime.GetWeekDayString());
 }
 
@@ -78,7 +79,7 @@ void FileTest() {
 
 
 	File::WriteAllBytes("Test.bin", std::array<std::uint8_t, 13>{1, 2, 3});
-	Console::WriteLine("Saved bin file output:" ,File::ReadAllBytes("Test.bin"));
+	Console::WriteLine("Saved bin file output:", File::ReadAllBytes("Test.bin"));
 }
 
 void Limits() {
@@ -170,10 +171,9 @@ void Run() {
 
 int main()
 {
-	Timer t = Timer();
-	File::WriteT<Timer>("Test1.bin",t );
-	Console::WriteLine(File::ReadT<Timer>("Test1.bin"));
-
+	Array arr = Array<int, 5>();
+	auto arr2D = Array<Array<int, 5>, 2>();
+	Console::WriteLine(arr2D);
 	Run();
 	return 0;
 }
