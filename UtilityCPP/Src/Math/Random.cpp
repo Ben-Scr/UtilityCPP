@@ -6,6 +6,11 @@ namespace BenScr {
 		static thread_local std::bernoulli_distribution dist(0.5);
 		return dist(s_Gen);
 	}
+
+	std::uint8_t Random::NextByte() {
+		static thread_local std::uniform_real_distribution<std::uint8_t> dist(0, 1);
+		return dist(s_Gen);
+	}
 	std::uint8_t Random::NextByte(std::uint8_t max) {
 		static thread_local std::uniform_int_distribution<int> dist;
 		return dist(s_Gen, typename decltype(dist)::param_type(0, max));

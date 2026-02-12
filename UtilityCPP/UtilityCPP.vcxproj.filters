@@ -60,6 +60,9 @@
     <ClInclude Include="Src\Collections\Array.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Collections\ArrayExample.cpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\IO\File.cpp">

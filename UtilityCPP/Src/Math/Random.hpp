@@ -29,6 +29,6 @@ namespace BenScr {
         static void SetSeed(uint32_t seed) { s_Gen.seed(seed); }
 
     private:
-        inline static std::mt19937 s_Gen{ std::random_device{}() };
+        inline static thread_local std::mt19937 s_Gen{ std::random_device{}() };
     };
 }
