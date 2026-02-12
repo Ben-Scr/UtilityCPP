@@ -44,7 +44,26 @@ namespace BenScr {
 
 		template<typename T>
 		static void WriteT(const std::string& path, const T& obj) {
+			std::ofstream file(path, std::ios::out | std::ios::binary);
 
+			if (!file.is_open()) {
+				throw std::runtime_error("File couldn't be opened");
+			}
+
+			file.write(reinterpret_cast<const char*>(&obj), sizeof(T));
+		}
+
+		template<typename T>
+		static T ReadT(const std::string& path) {
+			std::ifstream file(path, std::ios::binary);
+
+			if (!file.is_open()) {
+				throw std::runtime_error("File couldn't be opened");
+			}
+
+			T obj{};
+			file.read(reinterpret_cast<char*>(&obj), sizeof(T));
+			return obj;
 		}
 
 		static std::string ReadAllText(const std::string& path);

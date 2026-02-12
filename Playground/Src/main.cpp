@@ -170,6 +170,10 @@ void Run() {
 
 int main()
 {
+	Timer t = Timer();
+	File::WriteT<Timer>("Test1.bin",t );
+	Console::WriteLine(File::ReadT<Timer>("Test1.bin"));
+
 	Run();
 	return 0;
 }
