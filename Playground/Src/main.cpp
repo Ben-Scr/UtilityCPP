@@ -125,7 +125,6 @@ std::vector<std::pair<std::string, std::function<void()>>> functionMap = {
 	{ "Exit", Exit }
 };
 
-
 void PressEnterToContinue()
 {
 	Console::WriteLine("Press Enter to continue...");
@@ -176,9 +175,53 @@ void Run() {
 	}
 }
 
+struct alignas(8) Fo {
+	int x; // 4;
+	char y; // 5;
+	int z; // 12;
+};
+
+struct Fo2 {
+	Fo _1;
+	Fo _2;
+};
+
+struct Object {
+	virtual void ToString(std::ostream& os) const {
+		os << "Object";
+	}
+};
+
+inline std::ostream& operator<<(std::ostream& os, const Object& b) {
+	b.ToString(os);
+	return os;
+}
+
+struct Vec2 : public Object {
+	float X;
+	float Y;
+
+	Vec2(float x, float y) : X{ x }, Y{ y } {
+
+	}
+
+	void ToString(std::ostream& os) const override {
+		os << "(" << X << ", " << Y <<  ")";
+	}
+};
+
 int main()
 { 
+	Vec2 vec2 = Vec2{ 4.4f, 2.2f};
+
+	Console::WriteLine(vec2);
 	Array<int, 10> arr = Array<int, 10>(1);
+
+	Console::WriteLine(sizeof(Fo));
+	Console::WriteLine(sizeof(Fo2));
+	Console::WriteLine(alignof(Fo));
+	Console::WriteLine(alignof(Fo2));
+
 	auto arr2D = Array<Array<int, 5>, 2>{};
 	Console::WriteLine(arr);
 	Console::WriteLine(arr2D);
