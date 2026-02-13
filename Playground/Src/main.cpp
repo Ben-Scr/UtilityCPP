@@ -106,6 +106,13 @@ void Limits() {
 	Console::WriteLine("i64: ", MinValue<i64>());
 }
 
+
+void ChangeTitle() {
+	Console::WriteLine("Input the new Title:");
+	std::string input = Console::ReadLine();
+	Console::SetTitle(input);
+}
+
 std::vector<std::pair<std::string, std::function<void()>>> functionMap = {
 	{ "Random", RandomExample },
 	{ "String",StringExample },
@@ -114,6 +121,7 @@ std::vector<std::pair<std::string, std::function<void()>>> functionMap = {
 	{ "TimeSpan", TimeSpanExample },
 	{ "Limits" , Limits},
 	{ "File", FileTest },
+	{ "ChangeTitle", ChangeTitle},
 	{ "Exit", Exit }
 };
 
@@ -163,17 +171,18 @@ void DisplayOptions() {
 
 void Run() {
 	while (!canExit) {
-		Console::SetTitle("Utility CPP");
 		//Console::WriteLine(String::SEPERATOR_40);
 		DisplayOptions();
 	}
 }
 
 int main()
-{
-	Array arr = Array<int, 5>();
-	auto arr2D = Array<Array<int, 5>, 2>();
+{ 
+	Array<int, 10> arr = Array<int, 10>(1);
+	auto arr2D = Array<Array<int, 5>, 2>{};
+	Console::WriteLine(arr);
 	Console::WriteLine(arr2D);
+	Console::ReadLine();
 	Run();
 	return 0;
 }

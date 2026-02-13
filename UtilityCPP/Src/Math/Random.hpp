@@ -10,7 +10,6 @@ namespace BenScr {
 
         static bool NextBool();
 
-        static std::uint8_t NextByte();
         static std::uint8_t NextByte(std::uint8_t min, std::uint8_t max);
         static std::uint8_t NextByte(std::uint8_t max);
 
